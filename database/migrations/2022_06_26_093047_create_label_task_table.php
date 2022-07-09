@@ -13,8 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('task_label', function (Blueprint $table) {
-            $table->id();
+        Schema::create('label_task', function (Blueprint $table) {
             $table->unsignedBigInteger('task_id');
             $table->foreign('task_id')->references('id')->on('tasks');
             $table->unsignedBigInteger('label_id');
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('task_label');
+        Schema::dropIfExists('label_task');
     }
 };
